@@ -102,7 +102,7 @@ ifeq ($(VERSION),sh)
   VERSION_DEF := VERSION_SH
   GRUCODE_DEF := F3D_NEW
 # TODO: GET RID OF THIS!!! We should mandate assets for Shindou like EU but we dont have the addresses extracted yet so we'll just pretend you have everything extracted for now.
-  NOEXTRACT := 1 
+  NOEXTRACT := 1
 else
   $(error unknown version "$(VERSION)")
 endif
@@ -579,7 +579,9 @@ clean:
 
 distclean:
 	$(RM) -r $(BUILD_DIR_BASE)
+	$(MAKE) -C tools clean
 	./extract_assets.py --clean
+
 
 test: $(ROM)
 	$(EMULATOR) $(EMU_FLAGS) $<
