@@ -16,6 +16,7 @@
 #include <malloc.h>
 #include <libmc.h>
 #include <sjis.h>
+#include <ps2_memcard_driver.h>
 
 #include "ps2_memcard.h"
 

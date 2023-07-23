@@ -5,6 +5,7 @@
 #include <kernel.h>
 #include <ps2_joystick_driver.h>
 #include <libpad.h>
+#include <libmtap.h>
 
 #include "controller_api.h"
 
@@ -70,7 +71,7 @@ static int detect_pad(void) {
 
 static void controller_ps2_init(void) {
     int ret = -1;
-    
+
     // MEMORY CARD already initied SIO2MAN
     ret = init_joystick_driver(false);
 

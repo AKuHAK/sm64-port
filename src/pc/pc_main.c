@@ -42,6 +42,7 @@
 # include <sifrpc.h>
 # include <loadfile.h>
 # include <sbv_patches.h>
+# include <ps2_filesystem_driver.h>
 # include "ps2_memcard.h"
 #endif
 
@@ -143,7 +144,7 @@ static void on_anim_frame(double time) {
 void reset_IOP() {
     SifInitRpc(0);
     while (!SifIopReset(NULL, 0)) {} // Comment this line if you want to "debug" through ps2link
-    while (!SifIopSync()) {} 
+    while (!SifIopSync()) {}
 }
 
 static void prepare_IOP() {
@@ -209,7 +210,7 @@ void main_func(void) {
 #endif
 
     gfx_init(wm_api, rendering_api, "Super Mario 64 PC-Port", configFullscreen);
-    
+
     wm_api->set_fullscreen_changed_callback(on_fullscreen_changed);
     wm_api->set_keyboard_callbacks(keyboard_on_key_down, keyboard_on_key_up, keyboard_on_all_keys_up);
 
